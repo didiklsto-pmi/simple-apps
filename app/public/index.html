@@ -1,15 +1,157 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Training DevOps</title>
-    <link rel="stylesheet" href="stylesheet/style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Profil Saya</title>
+  <style>
+    :root {
+      --primary: #1e3a8a;
+      --secondary: #3b82f6;
+      --light: #ffffff;
+      --dark: #0f172a;
+    }
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      font-family: Arial, sans-serif;
+      color: var(--dark);
+      background: var(--light);
+      line-height: 1.6;
+    }
+    header {
+      background: var(--primary);
+      color: var(--light);
+      padding: 1rem 2rem;
+      text-align: center;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+    header h1 {
+      font-size: 2rem;
+    }
+    nav {
+      margin-top: 0.5rem;
+    }
+    nav a {
+      color: var(--light);
+      margin: 0 1rem;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    nav a:hover {
+      color: var(--secondary);
+    }
+    main {
+      padding: 2rem;
+    }
+    section {
+      margin-bottom: 3rem;
+    }
+    #portfolio h2,
+    #contact h2 {
+      font-size: 1.8rem;
+      margin-bottom: 1rem;
+      color: var(--primary);
+    }
+    .projects {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1.5rem;
+    }
+    .project-card {
+      border: 1px solid var(--secondary);
+      border-radius: 8px;
+      padding: 1rem;
+      transition: transform 0.3s;
+    }
+    .project-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    }
+    .project-card h3 {
+      font-size: 1.2rem;
+      margin-bottom: 0.5rem;
+      color: var(--dark);
+    }
+    .project-card p {
+      font-size: 0.95rem;
+      color: #334155;
+    }
+    footer {
+      background: var(--dark);
+      color: var(--light);
+      text-align: center;
+      padding: 1.5rem 2rem;
+    }
+    footer p {
+      margin: 0.5rem 0;
+      font-size: 0.9rem;
+    }
+    footer a {
+      color: var(--secondary);
+      text-decoration: none;
+    }
+    footer a:hover {
+      text-decoration: underline;
+    }
+  </style>
 </head>
 <body>
-    <img class="logo" src="./images/idn-logo.png" alt="idn-logo">
-     <h1>Belajar Devops</h1>
-     <p>Update Compose</p>
+  <header>
+    <h1>Nama Saya Didik</h1>
+    <nav>
+      <a href="#portfolio">Portfolio</a>
+      <a href="#contact">Kontak</a>
+    </nav>
+  </header>
+  <main>
+    <section id="portfolio">
+      <h2>Portfolio &amp; Proyek</h2>
+      <div class="projects">
+        <div class="project-card">
+          <h3>Proyek 1</h3>
+          <p>Deskripsi singkat proyek 1 yang menunjukkan kemampuan dan teknologi yang digunakan.</p>
+        </div>
+        <div class="project-card">
+          <h3>Proyek 2</h3>
+          <p>Deskripsi singkat proyek 2 yang menunjukkan kemampuan dan teknologi yang digunakan.</p>
+        </div>
+        <div class="project-card">
+          <h3>Proyek 3</h3>
+          <p>Deskripsi singkat proyek 3 yang menunjukkan kemampuan dan teknologi yang digunakan.</p>
+        </div>
+      </div>
+    </section>
+    <section id="contact">
+      <h2>Kontak</h2>
+      <p>Silakan hubungi saya di:</p>
+      <p>Email: <a href="mailto:email@contoh.com">email@contoh.com</a></p>
+      <p>Telepon: <a href="tel:+628123456789">+62 812-3456-789</a></p>
+    </section>
+  </main>
+  <footer>
+    <p>&copy; <span id="year"></span> Nama Saya Didik</p>
+    <p><a href="#">Kembali ke atas</a></p>
+  </footer>
+
+  <script>
+    // Set current year
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Smooth scroll
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function(e) {
+        e.preventDefault();
+        document.querySelector(this.getAttribute('href')).scrollIntoView({
+          behavior: 'smooth'
+        });
+      });
+    });
+  </script>
 </body>
 </html>
